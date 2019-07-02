@@ -1,0 +1,116 @@
+<html>
+<head>
+    <title>ESC Annual Membership Application</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="/stylesheets/application.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <% var curr_year = new Date() %>
+    <% var curr_year1 = curr_year.getFullYear() %>
+    <% curr_year2 =  curr_year1 + 1 %>
+    <% curr_year3 =  curr_year1 + "-" + curr_year2 %>
+    <div class="container">
+<h3 align="center">APPLICATION FORM FOR MEMBERSHIP WITH ESC</h3><br><br>
+<form method="post" action="/upload">
+
+<div>
+    <label for="company">Company <span>*</span></label> 
+    <input type="text" id="company" class="form-control" name="app[name]" required>
+</div><br>
+<div>
+    <label for="est-date">Date of establishment <span>*</span></label> 
+    <input id="est-date" class="form-control" type="date" name="app[date]" required></div><br>
+<div>
+  <label for="reg-office">  Registered office address <span>*</span></label> <input id="reg-office" class="form-control" type="text" name="app[address]" required></div><br>
+<div>
+  <label for="city">  City <span>*</span></label> <input id="city" class="form-control" type="text" name="app[city]" required></div><br>
+<div>
+  <label for="pin">  Pin <span>*</span></label><input id="pin" class="form-control" type="value" name="app[pin]" required></div><br>
+<div>
+  <label for="state">  State <span>*</span></label> <input id="state" class="form-control" type="text" name="app[state]" required></div><br>
+<div>
+<label for="tele"> Telephone <span>*</span></label> <input id="tele" class="form-control" type="value" name="app[telephone]" required></div><br>
+<div>
+  <label for="email">  Email <span>*</span></label> <input id="email" class="form-control" type="email" name="app[email]" required></div><br>
+<div>
+<label for="web"> Website <span>*</span></label> <input id="web" class="form-control" type="text" name="app[website]" required></div><br>
+<div>
+    <label for="ceo-name">CEO Name <span>*</span></label> <input id="ceo- name" class="form-control" type="text" name="app[ceon]" required></div><br>
+<div>
+<label for="email1">Email <span>*</span></label><input id="email1" class="form-control" type="email" name="app[email1]" required></div><br>
+<div>
+    <label for="phone">Phone/Mobile <span>*</span></label> <input id="phone" class="form-control" type="value" name="app[phone]" required></div><br>
+<div>
+    <label for="iec">IEC Number <span>*</span></label><input id="iec" class="form-control" type="text" name="app[iec]" required></div><br>
+<div>
+    <input type="hidden" disabled value="<%= curr_year3 %>" name="curryear"></div>
+<!--<div>Upload IEC <input type="file" name="app[iecupload]"></div><br> -->
+<!--<div>
+      Upload IEC
+<input type="file" id="file-upload" name="filename" >
+<input type="submit" onclick="fun()">
+</div> -->
+
+
+<div>
+    <label for="gstin">GSTIN <span>*</span></label><input id="gstin" class="form-control" type="text" name="app[gst]" required></div><br>
+
+<!--<div>Upload GSTIN <input type="file" name="app[uploadgst]"></div><br> -->
+<div>
+    <label for="person-contact">Contact Person's Name <span>*</span></label> <input id="person-contact" class="form-control" type="text" name="app[name1]" required></div><br>
+<div>
+    <label for="designation">Designation <span>*</span></label><input id="designation" class="form-control" type="text" name="app[designation1]" required></div><br>
+<div>
+    <label for="mobile">Mobile no. <span>*</span></label><input id="mobile" class="form-control" type="value" name="app[mobile]" required></div><br>
+<div>
+    <label for="email2">Email <span>*</span></label><input id="email2" class="form-control" type="email" name="app[email2]" required></div><br>
+<div>
+   <label for="reg-type"> Registeration Type <span>*</span></label>
+        <select id="reg-type" class="form-control" name="app[registertype]" required>
+                <option>SELECT</option>
+                    <option>MANUFACTURER</option>
+                <option>MERCHANT</option>
+                <option>MANUFACTURER AND MERCHANT</option>
+                <option>SERVICE PROVIDER</option>
+                <option>MANUFACTURER AND SERVICE PROVIDER</option>
+                <option>MERCHANT AND SERVICE PROVIDER</option>
+                <option>ASSOCIATION / INSTITUTE</option>
+                </select>
+</div><br>
+
+<div>
+<label for="comp-type"> Select Company Type <span>*</span></label> 
+<select id="comp-tye" class="form-control" name="app[companytype]" required>
+    <option>SELECT</option>
+    <option>LIMITED</option>
+    <option>PRIVATE LIMITED</option>
+    <option>PARTNERSHIP</option>
+    <option>PROPRIETORSHIP</option>
+</select>
+</div><br>
+<div>
+    <label for="comp-cin">Company CIN <span>*</span></label><input id="comp-cin" class="form-control" type="value" name="app[companycin]" required></div><br>
+<div><label style="display:block;" for="dname">Director's Name <span>*</span></label> 
+    <textarea style="display:block;" id="dname" rows="4" cols="50" name="app[directorname]" required></textarea>
+    </div><br>
+    <div><label style="display:block;" id="ccin" for="comment">PAN Of All Parteners <span>*</span></label>
+        <textarea style="display:block;" id="ccin" rows="4" cols="50" name="app[partnerpan]" required></textarea> </div><br>
+    
+<div>
+    <label for="comp-pan">
+    COMPANY PAN <span>*</span></label><input id="comp-pan" class="form-control" type="text" name="app[companypan]"></div><br>
+<div class="form-group">
+<label  style="display:block;" for="ireg">Items of registration <span>*</span></label> 
+<textarea style="display:block;" rows="4" cols="50" name="app[itemreg]" id="ireg" required></textarea>
+</div>
+<br>
+<div><label for="payment">Payment Details <span>*</span></label><input id="payment" class="form-control" type="text" name="app[pay]" required></div>
+<br>
+<input class="btn btn-success" type="submit" value ="submit">
+</form>
+</div>
+
+
+</body>
+
+</html>

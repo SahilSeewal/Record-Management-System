@@ -1,0 +1,31 @@
+h2{
+    position:auto;
+margin-top:0em;
+color:rgb(215, 370, 57);
+font-weight:3000;
+font-size:40px;
+width:auto;
+font-family: 'Russo One', sans-serif;
+}
+#head-div{
+    background:rgb(3, 87, 128);
+    width:35vw;
+    margin:0 auto;
+    position:relative;
+}
+body{
+
+    font-family:"Arial", Serif;
+						  background-image:url("https://image.freepik.com/free-photo/stationeries-eyeglasses-apple-laptop-earphones-cactus-plant-desk_23-2148178599.jpg");
+						  overflow-x:hidden;
+						  background-repeat:no-repeat;
+						  background-position-x: -5%;
+						  background-position-y: 100%;
+						  background-size:cover;
+}
+
+#contain1{
+    width:1000px;
+    border:9px solid white;
+    background-color: rgba(0,0,0, 0.4);
+}

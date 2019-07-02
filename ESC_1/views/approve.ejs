@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>APPROVE APPLICATION FORM</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="/stylesheets/approve.css">
+</head>
+<body>
+    <div class="container">
+        <h2 align="center">APPROVAL FORM</h2>
+<form action="/approve/<%= data._id %>" method="post">
+<div style="margin-top:30px;">
+  <label for="file"> File Number </label><input id="file" class="form-control" type="text" name="fileno"></div><br>
+<div>
+    <label for="reg-no">Registration Number</label> <input id="reg-no" class="form-control" type="text" name="registrationno"></div><br>
+<div>
+    <label for="reg-date">Date Of Registration</label> <input id="reg-date" class="form-control" type="date" name="regdate"></div><br>
+<div>
+    <label for="date-val">Date Of Validity</label> <input id="date-val" class="form-control" type="date" name="valid"></div><br>
+<div>
+    <label style="display:block;" for="r1">Remarks </label> <textarea class="form-control" name="remark" style="display:block;" id="r1" rows="4" cols="50"></textarea></div><br>
+<div>
+    <label for="dgft">DGFT Status </label><input id="dgft" class="form-control" type="text" name="dgft"></div><br>   
+<input class="btn btn-success" type="submit">
+</form>
+</div>
+</body>
+</html>

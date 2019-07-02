@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/stylesheets/item.css">
+
+<h2 align="center">ITEMS</h2>
+<div class="container" style="width:500px;">
+    
+   
+    <div id="btn"><a style="text-decoration: none;"  href="/add-item/<%= p1 %>/<%= g1.replace(/\//g, '%2F') %>" class="button button1">ADD ITEM</a></div>
+    <% data.forEach(function(data1){ %>
+        
+    <div align="center">
+        
+        
+           
+        <div class="card">
+            <div class="card-header">
+                   <span id="code" > HS CODE</span> <a id="code"><%= data1.HS_CODE %></a><br>
+                <a id="desc" style="text-decoration:none;"><%= data1.ITEM_DESC %></a>
+            </div>
+            <div class="card-body">
+              <a id="edit" href="/panel/<%=data1.PANEL%>/<%=data1.GROUP.replace(/\//g, '%2F')%>/<%=data1.ITEM_DESC.replace(/\//g, '%2F')%>/<%= data1.HS_CODE %>/<%= data1._id %>/edit"  class="btn btn-primary">EDIT</a>
+             <span><form id="delete" action="/panel/<%=data1.PANEL%>/<%=data1.GROUP.replace(/\//g, '%2F')%>/<%=data1.ITEM_DESC.replace(/\//g, '%2F')%>/<%= data1.HS_CODE %>/<%= data1._id %>/delete?_method=DELETE" method="POST" ><input type="submit" value="DELETE" class="btn btn-danger"></form></span>  
+          </div>
+          </div>
+    </div>
+  
+<% }) %>
+</div>
+<% include ../partials/footer %>

@@ -1,0 +1,12 @@
+<% include ../partials/header %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/group.css">
+<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
+<h2 align="center">GROUPS</h2>
+
+<% data.forEach(function(data1){ %>
+    <div align="center">
+                
+<h4><a style="text-decoration:none;" href="/panel/<%=data1.PANEL %>/<%= data1.GROUP.replace(/\//g, '%2F')%>"><%= data1.GROUP %></a></h4>
+    </div>
+<% }) %>
+<% include ../partials/footer %>

@@ -1,0 +1,45 @@
+<% include ../partials/header  %>
+<link rel="stylesheet" href="/stylesheets/view-company.css"> 
+<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
+
+<div id="parent1">
+<form class="form-inline my-0 my-lg-0">
+   
+   
+    <h2 style="padding-top:20px;"align="center">COMPANY DETAILS</h2>
+ 
+    <div align="center" class="container"> <input aria-label="Search" class="form-control mr-sm-0" onkeyup="showResults(this.value)" placeholder="Comapny Name" type="search"/>
+      <span class="highlight">
+      </span>
+    
+      
+      <div id="parent">
+      <div class="border" id="search-results">
+        </div>
+      </div>
+
+      </div>
+     
+    </form>
+<table border="1" align="center" style="margin-top:3em;">
+  <thead>  
+  <tr>
+     <th>COMPANY</th>
+     <th>FILE NUMBER</th>
+    </tr>
+</thead>
+    
+<tbody>
+    
+<% data.forEach(function(data1){ %>
+  <tr>
+<td><a style="text-decoration:none;" href="/view-company/<%= data1.FileNo %>"><%= data1.Company %></a></td>
+<td><p><%= data1.FileNo %></p></td>
+<tr>
+<% }) %>
+  
+</tbody>    
+
+</table>
+</div>
+<% include ../partials/footer  %>

@@ -1,0 +1,15 @@
+body{
+    background-image: url("https://images.pexels.com/photos/768943/pexels-photo-768943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-repeat:no-repeat;
+    background-size:cover;}
+
+    h2 {
+        font: 400 80px/1.2 'Merienda One', Helvetica, sans-serif;
+        color: #85144b;
+        text-shadow: 3px 3px 3px #fff;
+      }
+      a{
+        font-size:30px;  
+       color:#001f3f;
+       font-weight:5000;  
+      }

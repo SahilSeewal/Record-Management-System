@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title>ESC Annual Membership Application</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+<h3 align="center">EDIT APPLICATION FORM FOR MEMBERSHIP WITH ESC</h3><br><br>
+<form method="post" action="/edit1/<%= app._id %>?_method=PUT">
+<div>Company <input type="text" name="app[name]" value="<%= app.Company %>" required></div><br>
+<div>Date of establishment <input type="text" name="app[date]" value="<%= app.DateOfEstablish.toDateString() %>" required></div><br>
+<div>Registered office address <input type="text" name="app[address]" value="<%= app.OfficeAdd %>" required></div><br>
+<div>City <input type="text" name="app[city]" value="<%= app.City %>" required></div><br>
+<div>Pin <input type="value" name="app[pin]" value="<%= app.Pin %>" required></div><br>
+<div>State <input type="text" name="app[state]" value="<%= app.State %>" required></div><br>
+<div>Telephone <input type="value" name="app[telephone]" value="<%= app.Telephone %>" required></div><br>
+<div>Email <input type="email" name="app[email]" value="<%= app.Email %>" required></div><br>
+<div>Website <input type="text" name="app[website]" value="<%= app.Website %>" required></div><br>
+<div>CEO Name <input type="text" name="app[ceon]" value="<%= app.CEOName %>" required></div><br>
+<div>Email <input type="email" name="app[email1]" value="<%= app.Email1 %>"required></div><br>
+<div>Phone/Mobile <input type="value" name="app[phone]" value="<%= app.Phone %>" required></div><br>
+<div>IEC Number <input type="text" name="app[iec]" value="<%= app.IECNumber %>" required></div><br>
+<!--<div>Upload IEC <input type="file" name="app[iecupload]"></div><br> -->
+<!--<div>
+      Upload IEC
+<input type="file" id="file-upload" name="filename" >
+<input type="submit" onclick="fun()">
+</div> -->
+
+
+<div>GSTIN <input type="text" name="app[gst]" value="<%= app.GSTIN %>" required></div><br>
+
+<!--<div>Upload GSTIN <input type="file" name="app[uploadgst]"></div><br> -->
+<div>Contact Person's Name <input type="text" name="app[name1]" value="<%= app.PersonName %>" required></div><br>
+<div>Designation <input type="text" name="app[designation1]" value="<%= app.Designation %>" required></div><br>
+<div>Mobile no.<input type="value" name="app[mobile]" value="<%= app.Mobile %>" required></div><br>
+<div>Email<input type="email" name="app[email2]" value="<%= app.Email2 %>" required></div><br>
+<div>Registeration Type
+<input name="app[registertype]" value="<%= app.RegType %>" type="text"required>
+        </div><br>
+
+<div>Select Company Type 
+<input name="app[companytype]" value="<%= app.SelectComp %>" type="text" required>    
+</div><br>
+<div>Company CIN <input type="value" name="app[companycin]" value="<%= app.CompanyCin %>" required></div><br>
+<div><label style="display:block;" for="dname">Director's Name</label> 
+    <textarea   style="display:block;" id="dname" rows="4" cols="50" name="app[directorname]" required><%= app.DirectorName %></textarea>
+    </div><br>
+    <div><label style="display:block;" id="ccin" for="comment">PAN Of All Parteners </label>
+        <textarea style="display:block;" id="ccin" rows="4" cols="50" name="app[partnerpan]" required><%= app.PanP %></textarea> </div><br>
+    
+<div>COMPANY PAN <input value="<%= app.ComapnyP %>" type="text" name="app[companypan]"></div><br>
+<div class="form-group">
+<label  style="display:block;" for="ireg">Items of registration</label> 
+<textarea style="display:block;" rows="4" cols="50" name="app[itemreg]" id="ireg" required><%= app.ItemRegration %></textarea>
+</div>
+<br>
+<div>Payment Details<input value="<%= app.PaymentD %>" type="text" name="app[pay]" required></div>
+<br>
+<input type="submit" value ="SUBMIT">
+</form>
+</div>
+
+
+</body>
+
+</html>

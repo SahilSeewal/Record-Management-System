@@ -1,0 +1,66 @@
+#parent{
+
+    position:relative;
+    width:50em;
+}
+#search-results{
+
+   position:absolute;
+    text-align: left;
+    min-width:100%;
+    background-color:#E8E8E8; 
+   }
+   .container{
+       display:flex;
+       flex-direction:column;
+   }
+input[type="search"]{
+    max-width:50em;
+
+    appearance: none;
+    background-color: none;
+    border: 1px solid purple;
+    line-height: 0;
+    font-size: 17px;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    border-radius: 60px;
+    color: purple;
+    font-weight: 100;
+    letter-spacing: 0.01em;
+    position: relative;
+    z-index: 1;
+}
+
+table{
+    width:50em;
+}
+
+    th,
+    td {
+      border: 1px solid black;
+      padding: 10px;
+      overflow: hidden;
+    font-size:25px;
+    }
+    
+body{
+    background-image:url("https://image.freepik.com/free-photo/selective-focus-keyboard-with-magnifier-searching-concept_39664-3.jpg");
+background-repeat: no-repeat;
+background-position-x: center;
+background-size: cover;
+
+}
+#parent1{
+    background-color: white;
+    width:1000px;
+    margin:0 auto;
+}
+
+h2{
+    font: 400 50px/1.2 'Merienda One', Helvetica, sans-serif;
+    color: rgba(0,0,0,0.7);
+    text-shadow: 3px 3px 3px #fff;
+}

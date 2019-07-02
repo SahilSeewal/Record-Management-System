@@ -1,0 +1,93 @@
+<% include ../partials/header  %>
+<link rel="stylesheet" href="/stylesheets/company-export-fee.css" >
+<div class="container">
+<h2 align="center">EXPORT FEE</h2>
+<% var month1; %>
+<% var i = 0 %>
+
+<table id="table" border="1">
+    <thead>   
+    <th>YEAR</th>
+    <th>EXPORT IN LAKHS</th>
+        <th>UPTO</th>
+        <th>FEE APPL</th>
+        <th>FEE PAID</th>
+        <th>YEAR PAID</th>
+        <th>BALANCE</th>
+        <th>BAL PAID YEAR</th>
+        <th>REMARKS</th>
+        <th>UPDATE</th>
+
+        </thead>
+        <tbody>
+<% data2.forEach(function(data2){ %>
+    <form action="/export-fee/<%= data2.FileNo %>/<%= data2.year %>/<%= data2.upto %>" method="post">            
+  <% if(data2.upto == "1"){ %>
+    <% month1 = "April" %> 
+ <%}else if(data2.upto == "2" ){%>
+     <% month1 = "May" %> 
+     <%} else if(data2.upto == "3"){%>
+         <% month1 = "June" %> 
+         <%}else if( data2.upto == "4"){%>
+             <% month1 = "July" %> 
+             <%}else if(data2.upto =="5" ){%>
+                 <% month1 = "August" %> 
+                 <%}else if( data2.upto == "6"){%>
+                     <% month1 = "September" %> 
+                     <%}else if(data2.upto == "7" ){%>
+                         <% month1 = "October" %> 
+                         <%}else if(data2.upto == "8" ){%>
+                             <% month1 = "November" %> 
+                             <%}else if(data2.upto == "9" ){%>
+                                 <% month1 = "December" %> 
+                                 <%}else if(data2.upto == "10" ){%>
+                                     <% month1 = "January" %> 
+                                     <%}else if(data2.upto == "11" ){%>
+                                         <% month1 = "Feburary" %> 
+                                         <%}else if(data2.upto == "12" ){%>
+                                             <% month1 = "March" %> 
+                                             <%}%>
+  
+  <tr>
+            <td><%= data2.year%></td>
+            <td><%= data2.export_fee %></td>
+            <td><%= month1 %></td>
+            <td><input autocomplete="off" name="appl" type="text" class="form-control" id="appl" placeholder="FEE APPL" value="<%= data2.fee_appl %>"></td>
+            <td><input autocomplete="off" name="paid" type="text" class="form-control" id="paid" placeholder="FEE PAID" value="<%= data2.fee_paid %>"></td>
+            <td><input type="text" name="year1" id="year1" autocomplete="off" value="<%= data2.year2 %>">
+              </td>
+            <td><input autocomplete="off" name="valu" type="text" class="form-control" id="balance"  placeholder="BALANCE" value="<%= data2.balance %>" readonly="readonly"></td>
+            <td><input type="text" name="year2" id="year2" autocomplete="off" value="<%= data2.year3%>"></td>
+            <td><input autocomplete="off" name="remark" type="text" class="form-control" id="remark" placeholder="REMARKS" value="<%= data2.remark %>"></td>  
+            <td><input name="submit" type="submit" class="form-control"></td>
+          </tr>
+          <% i= i+ 1 %>
+    </form>
+          <%})%>
+</tbody>
+</table>
+</div>
+
+<!-- ***********************************************************************-->
+
+<script>
+$("#table tbody").on('keyup','#paid',function(){
+    var currow = $(this).closest('tr')
+    var col1 =currow.find('input:eq(0)').val()
+    var col2 =currow.find('input:eq(1)').val()
+    var num = col1 - col2
+    var col3 =currow.find('input:eq(3)').val(num)
+  //  console.log(col3)
+})
+
+$("#table tbody").on('keyup','#appl',function(){
+    var currow = $(this).closest('tr')
+    var col1 =currow.find('input:eq(0)').val()
+    var col2 =currow.find('input:eq(1)').val()
+    var num = col1 - col2
+    var col3 =currow.find('input:eq(3)').val(num)
+  //  console.log(col3)
+})
+ 
+    </script>
+<% include ../partials/footer  %>

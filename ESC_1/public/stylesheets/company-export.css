@@ -1,0 +1,143 @@
+body{
+  margin: 0;
+  padding: 0;
+  background: url("https://st3.depositphotos.com/1237630/16395/i/1600/depositphotos_163957584-stock-photo-futuristic-network-figure-abstract-background.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: sans-serif;
+}
+h1{
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  color:rgb(62, 125, 188);
+  padding-top:45px;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+p{
+  color:red;
+  font-weight:1000;
+vertical-align:top;
+width:130px;
+
+}
+#year-container{
+  border:2px solid white;
+margin-top:5px;
+height:120px;
+background-color: #F0F8FF; 
+}
+#year-container form div p{
+  width:500px;
+  text-align:center;
+  margin-left:170px;
+  color:blueviolet;
+}
+table{
+  margin-top:10px;
+  background-color:white;
+}
+#year-container form p{
+ 
+  color:blueviolet;
+}
+#year-container form input[type="submit"]{
+min-width:100px;
+height:30px; 
+padding-top:1.6px;
+}
+
+th,td{
+  padding:10px;
+}
+
+.container{
+  display:flex;
+  flex-direction:row;
+    
+}
+
+#country{
+  width:130px;
+
+}
+.country{
+  margin-right:30px;
+}
+
+#find-results1{
+  border:none;
+  width:100px;
+  
+ }
+.conatiner1{
+  display:flex;
+  align-content:center;
+}
+input[type="button"]{
+  width:10vw;
+  height:5vh;
+  margin-top:45px;
+  font-size:10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

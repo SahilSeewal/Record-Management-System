@@ -1,0 +1,80 @@
+
+<script>
+    function htmlbodyHeightUpdate(){
+		var height3 = $( window ).height()
+		var height1 = $('.nav').height()+50
+		height2 = $('.main').height()
+		if(height2 > height3){
+			$('html').height(Math.max(height1,height3,height2)+10);
+			$('body').height(Math.max(height1,height3,height2)+10);
+		}
+		else
+		{
+			$('html').height(Math.max(height1,height3,height2));
+			$('body').height(Math.max(height1,height3,height2));
+		}
+		
+	}
+	$(document).ready(function () {
+		htmlbodyHeightUpdate()
+		$( window ).resize(function() {
+			htmlbodyHeightUpdate()
+		});
+		$( window ).scroll(function() {
+			height2 = $('.main').height()
+  			htmlbodyHeightUpdate()
+		});
+	});
+
+
+	var showResults = debounce(function (arg) {
+  var value = arg.trim();
+  if (value == "" || value.length <= 0) {
+    $("#search-results").fadeOut();
+    return;
+  } else {
+    $("#search-results").fadeIn();
+  };
+  var jqxhr = $.get('/search?q=' + value, function (data) {
+      $("#search-results").html("");
+    })
+    .done(function (data) {
+      if (data.length === 0) {
+        $("#search-results").append('<p class="lead text-center mt-2">No results</p>');
+      } else {
+        console.table(data);
+        
+        data.forEach(x => {
+  
+          $("#search-results").append('<a style="text-decoration:none;" href="/view-company/'+ x.FileNo +'"><p class="m-2 mt-0 lead" style="font-size:15px;margin-top:7px;">' + x.Company + '</p> </a>');
+        });
+      }
+    })
+    .fail(function (err) {
+      console.log(err);
+    })
+}, 300);
+
+
+function debounce(func, wait, immediate) {
+  var timeout;
+  return function () {
+    var context = this,
+      args = arguments;
+    var later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+};
+
+
+  
+</script>
+
+        </body>
+</html>

@@ -1,0 +1,87 @@
+<% include ../partials/header  %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/company-exports.css">
+<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
+<div id="parent1">
+<form class="form-inline my-0 my-lg-0">
+    <h2 style="padding-top:10px;"align="center">COMPANY EXPORT</h2>
+    <div class="container" align="center">  <input aria-label="Search" class="form-control mr-sm-0" onkeyup="showResults(this.value)" placeholder="Comapny Name" type="search"/>
+      
+      <div id="parent">
+        <div class="border" id="find-results">
+        </div>
+      </div>
+
+      </div>
+     
+    </form>
+<table border="1" align="center" style="margin-top:3em;">
+  <thead>  
+  <tr>
+     <th>COMPANY</th>
+    </tr>
+</thead>
+    
+<tbody>
+    
+<% data.forEach(function(data1){ %>
+  <tr>
+<td><a style="text-decoration:none;" href="/export-company/<%= data1.FileNo %>"><%= data1.Company %></a></td>
+</tr>
+<% }) %>
+  
+</tbody>    
+
+</table>
+</div>
+<script>
+    	var showResults = debounce(function (arg) {
+  var value = arg.trim();
+  if (value == "" || value.length <= 0) {
+    $("#find-results").fadeOut();
+    return;
+  } else {
+    $("#find-results").fadeIn();
+  };
+  var jqxhr = $.get('/search?q=' + value, function (data) {
+      $("#find-results").html("");
+    })
+    .done(function (data) {
+      if (data.length === 0) {
+        $("#find-results").append('<p class="lead text-center mt-2">No results</p>');
+      } else {
+        console.table(data);
+        
+        data.forEach(x => {
+  
+          $("#find-results").append('<a style="text-decoration:none;" href="/export-company/'+ x.FileNo +'"><p class="m-2 mt-0 lead" style="font-size:15px;margin-top:7px;text-align:left;font-size:20px;">' + x.Company + '</p> </a>');
+        });
+      }
+    })
+    .fail(function (err) {
+      console.log(err);
+    })
+}, 300);
+
+
+function debounce(func, wait, immediate) {
+  var timeout;
+  return function () {
+    var context = this,
+      args = arguments;
+    var later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+};
+
+
+  
+</script>
+
+        </body>
+</html>

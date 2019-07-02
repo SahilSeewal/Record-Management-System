@@ -1,0 +1,31 @@
+<html>
+<head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>EDIT ITEM</title>
+    
+</head>
+<body>
+    
+        <div class="container" style="width:50vw;max-height:30vh">
+                <h2 style="text-align:center;">EDIT ITEM</h2>
+            <form action="/item/edit/<%= id1 %>?_method=PUT" method="POST">
+                <div class="form-group">
+                  <label for="panel">PANEL</label>
+                  <input type="text" name="p" class="form-control" id="panel" value="<%= panel %>" disabled>
+
+                 <br> <label for="group">GROUP</label>
+                  <input type="text" class="form-control" id="group" name="gn" value="<%= group %>" disabled>
+
+                  <br><label for="hs">HS CODE</label>
+                  <input type="text" name="hsc" class="form-control" id="hs" value="<%= hscode %>">
+
+                  <div class="field">
+                  <br><label for="item" style="display:block;">ITEM DESCRIPTION</label>
+                  <textarea id="item" name="itemn" class="form-control" style="display:block;width:50vw;height:20vh"><%= item %></textarea>
+                  </div>
+                  <br>  <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+    </div>
+</body>
+
+</html>

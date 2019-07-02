@@ -1,0 +1,184 @@
+<% include ../partials/header %>
+
+<link rel="stylesheet" href="/stylesheets/company-export.css" >
+
+<h1 style="font-weight:3000;"><%= data.Company %></h1>
+
+
+  <form action="/export-company/<%= data.Company %>/<%= data._id %>/<%= data.FileNo %>" method="POST">
+    <div class="container">    
+   
+      <div><p>Export Year</p><select name="year" id="year"></select></div> 
+      <div><p>Export Month</p><select name="month" id="month"></select></div>
+<div class="continer1"> 
+<div><p>Export Items</p><input id="inp" style="width:100px;" name="item" list="find-results1" aria-label="Search" class="form-control mr-sm-0" autocomplete="off" onkeyup="showResults(this.value)" placeholder="ITEM NAMES" type="search"/></div>
+<section id="bord" style="max-width: 50%;max-height: 0%;top:-1px;position:relative"></section>
+<section class="border" id="find-results1"></section>
+</div>
+  <div class="country"><p>Country</p>
+    <select  id="country" name="country">
+      <% data2.forEach(function(data2){%>
+    <option><%= data2.COUNTRY_NAME %></option>
+ <% })%>
+    </select>
+  </div>
+<div><p>Enter Amount</p><input autocomplete="off" name="value" type="text" class="form-control" id="value" placeholder="ENTER VALUE"></div>
+
+</div>
+<input style="margin-left:100px;" class="btn btn-warning" style="margin-top:20px;" type="submit">
+
+
+</form>
+
+<a href="/company/<%= data._id %>/1" style="margin-left:100px;" class="btn btn-success">VIEW ALL COMPANY EXPORTS</a>
+<div class="container" id="year-container">
+<form action="/view-record/<%= data.FileNo %>" method="get">
+<div><p>Search Export Of Particular Year</p></div>
+<p>Select Year</p><select name="year2" id="year1"></select>
+<span><input type="submit" class="btn btn-primary" value="SEARCH"></span>
+</form>
+</div>
+<% if(typeof data3 != 'undefined'){ %>
+  <% var month1 ;%>
+  <div class="container">
+      <div class="row">
+          <% var companyId %>
+          <table border="1">       
+      <thead>
+         
+          <tr>
+          <th>YEAR</th>
+          <th>MONTH</th>
+          <th>ITEMS</th>
+          <th>COUNTRY</th>
+          <th>VALUE</th>
+      </tr>    
+      </thead>
+              <% data3.forEach(function(export1){ %>
+                  <tbody>
+                  <% companyId = export1.company_id %> 
+      <tr>
+    
+          <% if(export1.month == "1"){ %>
+                 <% month1 = "April" %> 
+              <%}else if(export1.month == "2" ){%>
+                  <% month1 = "May" %> 
+                  <%} else if(export1.month == "3"){%>
+                      <% month1 = "June" %> 
+                      <%}else if( export1.month == "4"){%>
+                          <% month1 = "July" %> 
+                          <%}else if(export1.month =="5" ){%>
+                              <% month1 = "August" %> 
+                              <%}else if( export1.month == "6"){%>
+                                  <% month1 = "September" %> 
+                                  <%}else if(export1.month == "7" ){%>
+                                      <% month1 = "October" %> 
+                                      <%}else if(export1.month == "8" ){%>
+                                          <% month1 = "November" %> 
+                                          <%}else if(export1.month == "9" ){%>
+                                              <% month1 = "December" %> 
+                                              <%}else if(export1.month == "10" ){%>
+                                                  <% month1 = "January" %> 
+                                                  <%}else if(export1.month == "11" ){%>
+                                                      <% month1 = "Feburary" %> 
+                                                      <%}else if(export1.month == "12" ){%>
+                                                          <% month1 = "March" %> 
+                                                          <%}%>
+      
+  
+                  
+              <td><%= export1.year %></td>
+                  <td><%= month1 %></td>    
+                  <td><%= export1.item %></td>
+                  <td><%= export1.country %></td>  
+                  <td>Rs <%= export1.value %></td>                
+         </tr>     
+                  <% }) %>
+              </tbody>
+          </table>
+      </div>
+  
+<% } %>
+
+</div>
+<script type="text/javascript">
+var start = 1900;
+var monthNames = ["April", "May", "June", "July", "August", "September", "October", "November", "December", "January", "February", "March"];
+var end = new Date().getFullYear();
+var options = "";
+var options1="";
+for(var year = start ; year <=end; year++){
+  var year1=year + 1
+  options += "<option>"+ year+" - "+year1+"</option>";
+}
+
+for(var month = 0 ; month <=11; month++){
+  options1 += "<option>"+ monthNames[month] +"</option>";
+}
+
+document.getElementById("year").innerHTML = options;
+document.getElementById("month").innerHTML = options1;
+document.getElementById("year1").innerHTML = options;
+
+var showResults = debounce(function (arg) {
+  var value = arg.trim();
+  if (value == "" || value.length <= 0) {
+    $("#find-results1").fadeOut();
+    return;
+  } else {
+    $("#find-results1").fadeIn();
+  };
+  var jqxhr = $.get('/search1?q=' + value, function (data) {
+      $("#find-results1").html("");
+    })
+    .done(function (data) {
+      if (data.length === 0) {
+        $("#find-results").append('<p class="lead text-center mt-2">No results</p>');
+      } else {
+        console.table(data);
+        
+        
+        data.forEach(x => {
+           
+ $("#find-results1").append("<option id='ap' style='border-bottom:5px solid #778899;width:1000px;' value='" + x.ITEM_DESC + "'></option>");
+ var p=document.getElementById("find-results1")
+ $("#find-results1").show()
+ var node = document.createElement("option");
+ //var br = document.createElement("br");
+ var val = document.createTextNode(x.ITEM_DESC);
+node.appendChild(val); 
+document.getElementById("find-results1").appendChild(node);
+$('#find-results1 option').click(function() {
+        $('#inp').val($(this).text());
+        $("#find-results1").hide()
+    });
+
+    });
+      }
+    })
+    .fail(function (err) {
+      console.log(err);
+    })
+}, 300);
+
+
+function debounce(func, wait, immediate) {
+  var timeout;
+  return function () {
+    var context = this,
+      args = arguments;
+    var later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+};
+
+
+</script>
+</body>
+</html>

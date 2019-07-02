@@ -1,0 +1,118 @@
+<html>
+<head>
+    <title>ESC Annual Membership</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/stylesheets/company-info.css">
+</head>
+<body>
+        <div class="container">
+                <h2 align="center"><%= data.Company %></h2>
+                <table border="1" align="center">
+                <tr>
+                <td><b>USER-ID</b></td><td> <%= data.userid %></td>
+                </tr>
+
+                <tr>
+                <td><b>FILE NUMBER</b></td><td> <%= data.FileNo %></td>
+                </tr>
+                
+                <tr>
+                <td><b>COMPANY DATE OF ESTABLISHMENT </b></td> <td><%= data.DateOfEstablish.toDateString() %></td>
+                </tr>
+                
+                <tr>
+                <td><b>OFFICE ADDRESS</b></td> <td><%= data.OfficeAdd %></td>
+                </tr>
+                <tr>
+                <td><b>CITY</b></td> <td><%= data.City %></td>
+                </tr>
+                <tr>
+                <td><b>PIN</b></td> <td><%= data.Pin %></td>
+                </tr>
+                <tr>
+                <td><b>STATE</b></td> <td><%= data.State %></td>
+                </tr>
+                <tr>
+                <td><b>TELEPHONE</b> </td><td><%= data.Telephone %></td>
+                </tr>
+                <tr>
+                <td><b>EMAIL</b></td><td> <%= data.Email %></td>
+                </tr>
+                <tr>
+                <td><b>WEBSITE</b></td><td> <%= data.Website %></td>
+                </tr>
+                <tr>
+                <td><b>CEO NAME</b></td><td> <%= data.CEOName %></td>
+                </tr>
+                <tr>
+                <td><b>EMAIL</b></td><td> <%= data.Email1 %></td>
+                </tr>
+                <tr>
+                <td><b>PHONE</b></td><td> <%= data.Phone %></td>
+                </tr>
+                <tr>
+                <td><b>IEC NUMBER</b></td> <td><%= data.IECNumber %></td>
+                </tr>
+                <tr>
+                <td><b>GSTIN</b></td><td> <%= data.GSTIN %></td>
+                </tr>
+                <tr>
+                <td><b>PERSON'S NAME</b></td> <td><%= data.PersonName %></td>
+                </tr>
+                <tr>
+                <td><b>DESIGNATION</b></td><td> <%= data.Designation %></td>
+                </tr>
+                <tr>
+                <td><b>MOBILE</b></td><td> <%= data.Mobile %></td>
+                </tr>
+                <tr>
+                <td><b>EMAIL</b></td><td> <%= data.Email2 %></td>
+                </tr>
+                <tr>
+                <td><b>REGISTRATION TYPE</b></td><td> <%= data.RegType %></td>
+                </tr>
+                <tr>
+                <td><b>COMPANY TYPE</b></td><td> <%= data.SelectComp %></td>
+                </tr>
+                <tr>
+                <td><b>COMPANY CIN</b></td> <td><%= data.CompanyCin %></td>
+                </tr>
+                <tr>
+                <td><b>DIRECTOR'S NAME</b></td><td> <%= data.DirectorName %></td>
+                </tr>
+                <tr>
+                <td><b>PAN</b></td><td> <%= data.PanP %></td>
+                </tr>
+                <tr>
+                <td><b>COMPANY PAN</b></td><td> <%= data.ComapnyP %></td>
+                </tr>
+                <tr>
+                <td><b>ITEMS OF REGISTRATION</b></td><td> <%= data.ItemRegration %></td>
+                </tr>
+                <tr>
+                <td><b>PAYMENT</b></td><td> <%= data.PaymentD %></td>
+                </tr>
+                
+                <tr>
+                        <td><b>REGISTRATION NUMBER</b></td><td> <%= data.Regno %></td>
+                        </tr>
+                        <tr>
+                        <td><b>REGISTRATION DATE</b></td><td> <%= data.regdate.toDateString() %></td>
+                        </tr>
+                        <tr>
+                        <td><b>VALIDITY DATE</b></td><td> <%= data.Datevalid.toDateString() %></td>
+                        </tr>
+                        <tr>
+                        <td><b>REMARKS</b></td><td> <%= data.remarks %></td>
+                        </tr>
+                        <tr>
+                        <td><b>DGFT</b></td><td> <%= data.dgft %></td>
+                        </tr>
+
+                
+                </table>
+                </div>
+           <br>   
+<a id="export-fee" href="/export-fee/<%= data.FileNo %>">COMPANY EXPORT FEE >></a> 
+   </body>
+    </html>

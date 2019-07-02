@@ -1,0 +1,27 @@
+td{
+    padding:10px;
+    font-size:20px;
+}
+
+h2{
+    font-family:New Century Schoolbook, serif;
+    font-weight:3000;
+    font-size:80px;
+    color:#FF851B;
+}
+body{
+    background-image:url("https://image.freepik.com/free-photo/lovely-watercolor-background-with-copy-space_64049-166.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position: center;
+}
+tr td:nth-child(2){
+    color:purple;
+    font-weight:bold;
+font-size:22px;
+} 
+tr td:nth-child(1){
+    color:maroon;
+    font-weight:bold;
+    font-size:25px;
+} 

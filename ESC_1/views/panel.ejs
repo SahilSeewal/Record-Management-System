@@ -1,0 +1,16 @@
+<% include ../partials/header %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/panel.css">
+<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
+
+<h2 align="center">PANELS</h2>
+
+<% data.forEach(function(data1){ %>
+    <div align="center">
+<h4><a style="text-decoration:none;" href="/panel/<%= data1.CEL %>"><%= data1.CEL %></a></h4>
+<h4><a style="text-decoration:none;" href="/panel/<%= data1.EI %>"><%= data1.EI %></h4></a>
+<h4><a style="text-decoration:none;" href="/panel/<%= data1.ECO %>"><%= data1.ECO %></h4></a>
+<h4><a style="text-decoration:none;" href="/panel/<%= data1.CH %>"><%= data1.CH %></h4></a>
+<h4><a style="text-decoration:none;" href="/panel/<%= data1.TE %>"><%= data1.TE %></h4></a>
+    </div>
+<%}) %>
+<% include ../partials/footer %>

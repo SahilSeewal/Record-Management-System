@@ -1,0 +1,71 @@
+.button {
+      
+    background-color: purple; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius:20%;
+    outline:none;
+  }
+  
+  .button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid purple;
+    
+  }
+  .button1:hover {
+    background-color: purple;
+    color: white;
+  }
+  #btn{
+    margin-bottom:10px;
+    margin-left:343px;
+    width:500px;
+  }
+
+  #code{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight:bold;
+    font-size:25px;
+    color:teal;
+
+  }
+  #code1{
+    font-size:25px;
+   
+  }
+
+  #edit{
+    margin-top:5px;
+    height:30px;
+    font-size:13px;
+    display:inline-block;
+  }
+  #delete{
+    margin-top:5px;
+    display:inline-block;
+  }
+  .btn-danger{
+    height:30px;
+    font-size:13px;
+  }
+
+  h2{
+    font: 400 80px/1.2 'Merienda One', Helvetica, sans-serif;
+    color: #85144b;
+    text-shadow: 3px 3px 3px #fff;
+  }
+
+  #desc{
+      font-size:25px;
+      color:#001f3f;
+  }

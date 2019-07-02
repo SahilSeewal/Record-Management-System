@@ -1,0 +1,106 @@
+<% include ../partials/header%>
+<style>
+    td { 
+    padding: 15px;
+   
+    width:120px
+}
+th { 
+
+    padding: 18px;
+}
+table{
+    margin-top:10px;
+}
+    </style>
+    <% var month1 ;%>
+<div class="container">
+    <div class="row">
+        <% var companyId %>
+        <table border="1">       
+    <thead>
+       
+        <tr>
+        <th>YEAR</th>
+        <th>MONTH</th>
+        <th>ITEMS</th>
+        <th>COUNTRY</th>
+        <th>VALUE</th>
+    </tr>    
+    </thead>
+            <% company.forEach(function(export1){ %>
+                <tbody>
+                <% companyId = export1.company_id %> 
+    <tr>
+  
+        <% if(export1.month == "1"){ %>
+               <% month1 = "April" %> 
+            <%}else if(export1.month == "2" ){%>
+                <% month1 = "May" %> 
+                <%} else if(export1.month == "3"){%>
+                    <% month1 = "June" %> 
+                    <%}else if( export1.month == "4"){%>
+                        <% month1 = "July" %> 
+                        <%}else if(export1.month =="5" ){%>
+                            <% month1 = "August" %> 
+                            <%}else if( export1.month == "6"){%>
+                                <% month1 = "September" %> 
+                                <%}else if(export1.month == "7" ){%>
+                                    <% month1 = "October" %> 
+                                    <%}else if(export1.month == "8" ){%>
+                                        <% month1 = "November" %> 
+                                        <%}else if(export1.month == "9" ){%>
+                                            <% month1 = "December" %> 
+                                            <%}else if(export1.month == "10" ){%>
+                                                <% month1 = "January" %> 
+                                                <%}else if(export1.month == "11" ){%>
+                                                    <% month1 = "Feburary" %> 
+                                                    <%}else if(export1.month == "12" ){%>
+                                                        <% month1 = "March" %> 
+                                                        <%}%>
+    
+
+                
+            <td><%= export1.year %></td>
+                <td><%= month1 %></td>    
+                <td><%= export1.item %></td>
+                <td><%= export1.country %></td>  
+                <td>Rs <%= export1.value %></td>                
+       </tr>     
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+            <% if (pages > 0) { %>
+            <ul class="pagination text-center">
+                <% if (current == 1) { %>
+                    <li class="disabled"><a>First</a></li>
+                <% } else { %>
+                    <li><a href="/company/<%= companyId %>/1">First</a></li>
+                <% } %>
+                <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+                <% if (i !== 1) { %>
+                    <li class="disabled"><a>...</a></li>
+                <% } %>
+                <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+                    <% if (i == current) { %>
+                        <li class="active"><a><%= i %></a></li>
+                    <% } else { %>
+                        <li><a href="/company/<%= companyId %>/<%= i %>"><%= i %></a></li>
+                    <% } %>
+                    <% if (i == Number(current) + 4 && i < pages) { %>
+                        <li class="disabled"><a>...</a></li>
+                    <% } %>
+                <% } %>
+                <% if (current == pages) { %>
+                    <li class="disabled"><a>Last</a></li>
+                <% } else { %>
+                    <li><a href="/company/<%= companyId %>/<%= pages %>">Last</a></li>
+                <% } %>
+            </ul>
+          <% } %>
+
+        </div>
+
+<% include ../partials/footer%>
