@@ -10,4 +10,4 @@
   - countries
   - exportfees
   - groups
-                 8.panels
+  - panels
