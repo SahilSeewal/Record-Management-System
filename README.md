@@ -1,10 +1,13 @@
 # ESC
-DATABASE ----> company_data
-COLLECTIONS----->1.approves 
-                 2.companies
-                 3.companyexports
-                 4.companyitems
-                 5.countries
-                 6.exportfees
-                 7.groups
+- DATABASE NAME
+    - company_data
+      
+- COLLECTIONS
+  - approves 
+  - companies
+  - companyexports
+  - companyitems
+  - countries
+  - exportfees
+  - groups
                  8.panels
