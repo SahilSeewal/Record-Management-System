@@ -26,7 +26,7 @@ This system is a record management system for all client companies who want to E
    iv) Exported country name
    v) Amount
 
->> Storage details of MongoDB    
+> Storage details of MongoDB    
 - DATABASE NAME
     - company_data    
 - COLLECTIONS
